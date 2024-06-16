@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleProduct from "../../components/SingleProduct/SingleProduct";
+import { Helmet } from "react-helmet-async";
 
 const AllProducts = () => {
   //   const [products, setProducts] = useState([]);
@@ -40,6 +41,9 @@ const AllProducts = () => {
 
   return (
     <div className="max-w-7xl mx-auto pt-28">
+      <Helmet>
+        <title>Dressify | All Products</title>
+      </Helmet>
       <h1 className="text-5xl font-bold text-center">All Product{"'"}s</h1>
 
       <div className="text-center mt-6">

@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import about from '../../assets/WithUs/woman_shopping.png'
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
     <div className="hero min-h-screen bg-white pt-12">
+      <Helmet>
+        <title>Dressify | About</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse mb-16">
         <img
           src={about}

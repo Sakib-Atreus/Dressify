@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -38,6 +39,9 @@ const Profile = () => {
   };
   return (
     <div className="p-28 pb-32">
+      <Helmet>
+        <title>Dressify | Profile</title>
+      </Helmet>
       <div className="text-center">
         <h1 className="text-4xl font-semibold text-pink-700">
           Welcome to your profile!

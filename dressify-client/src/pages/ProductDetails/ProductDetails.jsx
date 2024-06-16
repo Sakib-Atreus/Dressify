@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
@@ -6,6 +7,9 @@ const ProductDetails = () => {
 
   return (
     <div className="pt-32">
+      <Helmet>
+        <title>Dressify | Product Details</title>
+      </Helmet>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
         <div className="">
           <img className="h-[600px]" src={image} alt="product image" />

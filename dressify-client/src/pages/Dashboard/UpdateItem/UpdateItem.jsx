@@ -40,7 +40,7 @@ const UpdateItem = () => {
   };
 
   useEffect(() => {
-    document.title = `Edit | ${data.name}`;
+    document.title = `Dressify | Edit | ${data.name}`;
   }, [data]);
   return (
     <div>

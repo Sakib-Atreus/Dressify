@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useAuth from "../../../hooks/useAuth";
 import {
   LineChart,
@@ -70,6 +71,9 @@ const DashboardHome = () => {
 
   return (
     <div className="w-full ms-4">
+      <Helmet>
+        <title>Dressify | Dashboard</title>
+      </Helmet>
       <h2 className="text-3xl mt-12 font-semibold">
         Hi,{" "}
         <span className="text-4xl text-pink-600 me-2">{user?.displayName}</span>

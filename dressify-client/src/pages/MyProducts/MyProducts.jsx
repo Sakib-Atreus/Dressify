@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
@@ -68,6 +69,9 @@ const MyProducts = () => {
 
   return (
     <div className="my-jobs-container pt-24">
+      <Helmet>
+        <title>Dressify | My Products</title>
+      </Helmet>
       <h1 className="text-center m-2 text-pink-600 text-opacity-60 p-4 font-black text-4xl rounded-full">
         My Product{"'"}s
       </h1>

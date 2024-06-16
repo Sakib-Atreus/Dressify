@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 //  import { useLoaderData } from "react-router-dom";
 
 const ManageItems = () => {
@@ -74,6 +75,9 @@ const ManageItems = () => {
 
   return (
     <div className="my-jobs-container ">
+      <Helmet>
+        <title>Dressify | Manage Products</title>
+      </Helmet>
       <h1 className="text-center m-2 text-black p-4 font-black text-4xl rounded-full">
         My Product{"'"}s
       </h1>
