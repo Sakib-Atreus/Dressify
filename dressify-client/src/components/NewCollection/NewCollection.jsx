@@ -12,32 +12,32 @@ const NewCollection = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-y-12 gap-x-4 mx-4 justify-center items-center ">
         <div>
             <img src={t1} alt="t-shirt" />
-            <h2 className="text-lg">I{"'"}m a product</h2>
+            <h2 className="text-lg">MTB T-Shirt for Men - Soft Cotton T-Shirt</h2>
             <p className="font-medium">$15.00</p>
         </div>
         <div>
             <img src={t2} alt="t-shirt" />
-            <h2 className="text-lg">I{"'"}m a product</h2>
+            <h2 className="text-lg">MTB T-Shirt for Men - Soft Cotton T-Shirt</h2>
             <p className="font-medium">$15.00</p>
         </div>
         <div>
             <img src={t3} alt="t-shirt" />
-            <h2 className="text-lg">I{"'"}m a product</h2>
+            <h2 className="text-lg">MTB T-Shirt for Men - Soft Cotton T-Shirt</h2>
             <p className="font-medium">$15.00</p>
         </div>
         <div>
             <img src={t4} alt="t-shirt" />
-            <h2 className="text-lg">I{"'"}m a product</h2>
+            <h2 className="text-lg">MTB T-Shirt for Men - Soft Cotton T-Shirt</h2>
             <p className="font-medium">$15.00</p>
         </div>
         <div>
             <img src={t5} alt="t-shirt" />
-            <h2 className="text-lg">I{"'"}m a product</h2>
+            <h2 className="text-lg">MTB T-Shirt for Men - Soft Cotton T-Shirt</h2>
             <p className="font-medium">$15.00</p>
         </div>
         <div>
             <img src={t1} alt="t-shirt" />
-            <h2 className="text-lg">I{"'"}m a product</h2>
+            <h2 className="text-lg">MTB T-Shirt for Men - Soft Cotton T-Shirt</h2>
             <p className="font-medium">$15.00</p>
         </div>
       </div>
