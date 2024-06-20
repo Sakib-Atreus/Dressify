@@ -79,7 +79,7 @@ const Footer = () => {
           </p>
           <div className="py-1">
             <div className="flex gap-2 items-center my-2">
-              <IoCallOutline className="text-pink-700 " /> <p>+1234567890</p>
+              <IoCallOutline className="text-pink-700 " /> <p>+0123456789</p>
             </div>
             <div className="flex gap-2 items-center">
               <MdOutlineMail className="text-pink-700 " />{" "}
