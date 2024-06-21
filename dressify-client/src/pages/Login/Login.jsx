@@ -1,8 +1,7 @@
-import { useContext} from "react";
-// import loginImg from "../../assets/others/authentication1-transformed.png";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -13,15 +12,19 @@ const Login = () => {
 
   const from = location?.state?.from?.pathname || "/";
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
-    signIn(email, password).then((result) => {
-      const user = result.user;
-      console.log(user);
+
+    try {
+      const result = await signIn(email, password);
+      const { token } = result;
+
+      // Store the token in localStorage
+      localStorage.setItem('token', token);
+
       Swal.fire({
         title: "Login Successfully!",
         color: "#D81B60",
@@ -41,8 +44,17 @@ const Login = () => {
           `
         }
       });
+
       navigate(from, { replace: true });
-    });
+    } catch (error) {
+      console.error('Login failed:', error);
+      Swal.fire({
+        title: "Login Failed!",
+        text: error.message,
+        icon: "error",
+        confirmButtonColor: "#D81B60",
+      });
+    }
   };
 
   return (

@@ -90,7 +90,7 @@ const ManageItems = () => {
         />{" "}
         <button
           onClick={handleSearch}
-          className="btn btn-sm bg-pink-600 text-black m-4"
+          className="btn btn-sm bg-pink-600 text-black m-4 hover:text-white"
         >
           Search
         </button>
@@ -148,7 +148,7 @@ const ManageItems = () => {
                   </td>
                   <td className="text-center border-black text-black bg-red-200">
                     <Link to={`/dashboard/editProduct/${product._id}`}>
-                      <button className="btn rounded-full bg-pink-600 text-black ">
+                      <button className="btn rounded-full bg-pink-600 text-black hover:text-white">
                         Edit
                       </button>
                     </Link>
@@ -157,7 +157,7 @@ const ManageItems = () => {
                     {" "}
                     <button
                       onClick={() => handleDelete(product._id)}
-                      className="btn bg-pink-700 text-black"
+                      className="btn bg-pink-700 text-black hover:text-white"
                     >
                       Delete
                     </button>

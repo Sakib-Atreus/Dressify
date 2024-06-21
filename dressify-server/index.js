@@ -22,15 +22,32 @@ const createToken = (user) => {
     return token;
   }
 
-  const verifyToken = (req, res, next) => {
-    const token = req.headers.authorization.split(" ")[1];
-    const verify = jwt.verify(token, "secret");
-    if (!verify?.email) {
-      return res.send("You are not authorized");
-    }
-    req.user = verify.email;
-    next();
+  // const verifyToken = (req, res, next) => {
+  //   const token = req.headers.authorization.split(" ")[1];
+  //   const verify = jwt.verify(token, "secret");
+  //   if (!verify?.email) {
+  //     return res.send("You are not authorized");
+  //   }
+  //   req.user = verify.email;
+  //   next();
+  // }
+
+  // JWT Verify Token
+const verifyJWT = (req, res, next) => {
+  const authorization = req.headers.authorization;
+  if (!authorization) {
+    return res.status(401).send({ error: true, message: "Unauthorized access" });
   }
+  const token = authorization.split(" ")[1];
+
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).send({ error: true, message: "Unauthorized access" });
+    }
+    req.decoded = decoded;
+    next();
+  });
+};
 
 const uri = `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@cluster0.sktmpwb.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -89,11 +106,17 @@ app.get('/', (req, res) => {
       })
       
     //get all data from database
-    app.get('/allProducts', async (req, res) => {
-      const cursor = productCollection.find();
-      const result = await cursor.toArray();
-      res.send(result);
-    })
+    app.get('/allProducts', verifyJWT, async (req, res) => {
+      try {
+        const cursor = productCollection.find();
+        const result = await cursor.toArray();
+        res.send(result);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        res.status(500).send({ error: true, message: "Internal Server Error" });
+      }
+    });
+
     //get single details data from all data
     app.get('/allProducts/:id', async (req, res) => {
       const id = req.params.id;

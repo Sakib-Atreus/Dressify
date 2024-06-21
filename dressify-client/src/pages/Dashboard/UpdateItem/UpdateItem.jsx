@@ -44,7 +44,7 @@ const UpdateItem = () => {
   }, [data]);
   return (
     <div>
-      <h1 className="text-center m-2 bg-black text-red-400 p-4 font-black text-4xl rounded-full">
+      <h1 className="text-center m-2 bg-black text-pink-800 p-4 font-black text-4xl rounded-full">
         Update Product!
       </h1>
       {/* <h1 className="text-center text-black font-black text-xl m-2">Name :
@@ -88,7 +88,7 @@ const UpdateItem = () => {
           className="input input-bordered input-secondary w-full max-w-xs bg-black text-white"
         />
         <input
-          className="btn border mb-4 mt-8 font-bold text-red-300 bg-black rounded-full w-full max-w-xs"
+          className="btn border mb-4 mt-8 font-bold text-pink-600 bg-black rounded-full w-full max-w-xs"
           type="submit"
         />
       </form>
