@@ -16,6 +16,7 @@ import Contact from "../pages/Contact/Contact";
 import About from "../pages/About/About";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import Dashboard2 from "../layout/Dashboard2";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/allProducts/:id",
-        element: <ProductDetails></ProductDetails>,
+        element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`https://dressify-server.vercel.app/allProducts/${params.id}`),
       },

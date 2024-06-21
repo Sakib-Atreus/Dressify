@@ -106,7 +106,7 @@ app.get('/', (req, res) => {
       })
       
     //get all data from database
-    app.get('/allProducts', verifyJWT, async (req, res) => {
+    app.get('/allProducts', async (req, res) => {
       try {
         const cursor = productCollection.find();
         const result = await cursor.toArray();
